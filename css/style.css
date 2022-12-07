@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+
+/*   font-family: 'Space Mono', monospace 
+
+     font-family: 'Space Grotesk', sans-serif;*/
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #000;
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+}
+header{
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu-btn button{
+  background: none;
+  color: #fff;
+}
+.menu-btn{
+  display: none;
+}
+/* navigation links */
+nav ul{
+  display: flex;
+  gap: 50px;
+}
+nav ul li{
+  list-style-type: none;
+}
+nav * a{
+  text-decoration: none;
+  color: rgb(243, 239, 239);
+  font-size: .9rem;
+  padding: 10px;
+}
+
+nav * a::before{
+  content: '[';
+  padding: 7px;
+  visibility: hidden;
+}
+nav * a::after{
+  content: ']';
+  padding: 7px;
+  visibility: hidden;
+}
+nav * a:hover::before{
+  visibility: visible;
+}
+nav * a:hover::after{
+  visibility: visible;
+}
+/*aside */
+aside{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  margin-top: 200px;
+  gap : 100px;
+  font-family: 'Space Grotesk', sans-serif;
+}
+aside video{
+  width: 100%;
+  height: 100%;
+}
+.intro-caption-wrapper h1{
+  font-size: 3rem;
+  text-align: center;
+}
+/* section */
+section img{
+  width: 50%;
+}
+section{
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+  gap: 150px;
+}
+.section-caption-wrap-1{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.caption p{
+font-size: 1.5rem;
+}
+.caption a{
+  text-decoration: none;
+  background: #fff;
+  padding: 15px;
+  color: #000;
+  border-radius: 50px;
+  letter-spacing: 2px;
+  position: relative;
+  top: 10px;
+  transition: opacity .2s ease;
+  font-weight: 100;
+}
+.caption a:hover{
+  opacity: .4;
+}
+.caption a > box-icon{
+  position: relative;
+  top: 7px;
+}
+.section-caption-wrap-2{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+}
+.section-caption-wrap-3{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+article img{
+  width: 100%;
+}
+article{
+  margin-top: 120px;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  gap: 50px;
+  font-family: 'Space Grotesk', sans-serif;
+  color: #fff;
+  line-height: 2rem;
+}
+#Brands img{
+  width: 100%;
+  animation: fadeOut 2s ease forwards;
+}
+#Brands > div{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+@keyframes fadeOut {
+  0%{
+    opacity: .5;
+  }
+  50%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+#contact{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  text-align: center;
+}
+#contact p {
+  font-size: 3.4rem;
+  font-weight: 900;
+}
+#contact span{
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 50px;
+  color: #000;
+}
+#contact span > box-icon{
+  position: relative;
+  top: 7px;
+}
+#contact span:hover{
+  opacity: .4;
+}
+/* footer */
+footer{
+  margin-top: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 20px;
+}
+.footer-nav{
+  display: flex;
+  gap: 100px;
+}
+.footer-nav li{
+  line-height: 50px;
+  list-style-type: none;
+  color: white;
+  transition: opacity .2s ease-out;
+}
+.footer-nav li:hover{
+  opacity: .5;
+  cursor: pointer;
+}
+.media{
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+.media a{
+  text-decoration: none;
+  padding: 20px;
+  border-radius: 50px;
+  color: rgb(243, 239, 239);
+}
+
+/* media queries */
+@media screen and (max-width: 578px) {
+  .menu-btn{
+    display: block;
+  }
+  header{
+    justify-content: space-between;
+    padding: 20px;
+  }
+  nav ul{
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    left: -45px;
+    top: 200px;
+    display: none;
+    height: 100vh;
+    z-index: 1;
+    transition: display 10s ease;
+    background: #000;
+  }
+  .show{
+   display: flex;
+  }
+  aside video{
+    width: 100%;
+    height: auto;
+  }
+  .intro-caption-wrapper h1{
+    font-size: 2rem;
+    text-align: left;
+  }
+  .section-caption-wrap-1{
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
+  }
+  section {
+    margin: 20px;
+    gap: 150px;
+  }
+  section img{
+    width: 100%;
+    height: auto;
+  }
+  .caption p{
+    font-size: 1.2rem;
+    line-height: 2rem;
+  }
+  .caption a{
+    padding: 10px;
+    font-size: .9rem;
+  }
+  .caption a > box-icon{
+    position: relative;
+    top: 8.5px;
+    left: -2px;
+  }
+  .section-caption-wrap-2{
+    flex-direction: column;
+  }
+  .section-caption-wrap-3{
+    flex-direction: column;
+  }
+  article{
+    flex-direction: column;
+    padding: 5px;
+    align-items: center;
+    text-align: center;
+  }
+  article img{
+    width: 100%; 
+  }
+  article p{
+    line-height: 2rem;
+    width: 100%;
+  }
+  #Brands > div{
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    align-self: start;
+  }
+  #contact{
+    gap: 50px;
+  }
+  #contact p{
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  #contact span {
+    padding: 10px;
+  }
+  footer{
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+  }
+}
+
